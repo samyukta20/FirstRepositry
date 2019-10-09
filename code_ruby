@@ -1,0 +1,17 @@
+gets.to_i.times do
+  a = Array.new
+  b = Array.new
+ a = gets.chomp.split("").map(&:to_s)
+ b = gets.chomp.split("").map(&:to_s)
+c=0
+ a.each do |x|
+   if b.include?(x)
+     puts "Yes"
+     c=1
+     break
+   end
+ end
+ if c==0
+   puts "No"
+ end
+end
