@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(void)
+{
+    long i,t,n,j,max,temp,c,d;
+    scanf("%ld",&t);
+    while(t--)
+    {
+        c=0;d=0;
+        scanf("%ld",&n);
+        long a[n];
+        for(i=0;i<n;i++)
+        scanf("%ld",&a[i]);
+        for(i=0;i<n-1;i++)
+        {
+            max=i;
+            for(j=i+1;j<n;j++)
+            {
+                if(a[j]>a[max])
+                max=j;
+            }
+            temp=a[i];
+            a[i]=a[max];
+            a[max]=temp;
+        }
+        for(i=0;i<n-1;i++)
+        {
+          if(a[i]==a[i+1])
+         {
+             if(c==0)
+             c=a[i];
+             else
+             d=a[i];
+             i++;
+         }
+         if(c!=0&&d!=0)
+         break;
+        }
+        if(c!=0&&d!=0)
+        printf("%ld\n",c*d);  
+        else
+        printf("-1\n");
+    }
+	return 0;
+}
+
