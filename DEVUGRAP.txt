@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(void)
+{
+    long long int i,t,n,k,c,d,s;
+    scanf("%lld",&t);
+    while(t--)
+    {
+        s=0;
+        scanf("%lld%lld",&n,&k);
+        long long int b[n];
+        for(i=0;i<n;i++)
+        {
+          scanf("%lld",&b[i]);
+          if((b[i]/k)!=0)
+        {
+          c=b[i]%k;
+          d=k-c;
+          if(c>d)
+          s+=d;
+          else
+          s+=c;
+        }
+        else
+        s+=(k-b[i]);
+        }
+        printf("%lld\n",s);
+        }
+	return 0;
+}
+
