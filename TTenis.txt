@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int i,t,c,d;
+    scanf("%d",&t);
+    while(t--)
+    {
+         char s[101];
+        c=0;d=0;
+        scanf("%s",s);
+        for(i=0;s[i]!='\0';i++)
+        {
+            if(s[i]=='1')
+            c++;
+            else
+            d++;
+        }
+       //printf("%d  %d ",c,d);
+        if(c>d)
+        printf("WIN\n");
+        else
+        printf("LOSE\n");
+    }
+	// your code goes here
+	return 0;
+}
+
